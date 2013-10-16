@@ -41,7 +41,8 @@ class McxNowCurrency(Currency):
         self.Add("SC", "SolidCoin", 1)
         self.Add("DVC", "Devcoin", 1)
         self.Add("WDC", "WorldCoin", 1)
-        self.Add("PPC", "PPCoin", 1)
+        self.Add("PPC", "Peercoin", 1)
+
 
 class McxNowTradedCurrency():
     #
