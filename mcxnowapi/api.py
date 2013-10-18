@@ -62,7 +62,7 @@ class McxNowSession():
     #
     #---------------------------------------------------------------------------
     
-    def __init__(self,username=None, password=None ):
+    def __init__(self,username=None, password=None):
         self.Session=requests.Session()
         self.User=McxNowUser()
         self.Public=McxNowPublic()
@@ -200,23 +200,20 @@ class McxNowSession():
             if result==0:
                 return MCXNOW_ERROR['HTTP Error']
             else:
-                texthtml=result.text
+                texthtml=result.text.encode('utf-8')
                 if self.__CheckSecretKey__(texthtml):
-                    parser = UserAccountHTMLParser()
-                    parser.feed(texthtml)
-                    i=0
                     for cur in MCXNOW_ALLCURRENCY:
-                        self.User.Details.Funds[cur].Balance=float(parser.data[3*i+1].split('Balance:')[1].split(cur)[0])
-                        depositaddress=str(parser.data[3*i+2])
-                        if depositaddress=='Get Deposit Address':
-                            self.User.Details.Funds[cur].DepositAddress=''
-                        else:
-                            self.User.Details.Funds[cur].DepositAddress=depositaddress
-                        self.User.Details.Funds[cur].MinimumDeposit=float(parser.deposit[6*i+1].split(cur)[0])
-                        self.User.Details.Funds[cur].WithdrawFee=float(parser.deposit[6*i+3].split(cur)[0])
-                        self.User.Details.Funds[cur].DepositConfirmations=int(parser.deposit[6*i+5])
-                        self.User.Details.Funds[cur].Incoming=parser.incoming[cur]
-                        i+=1
+                        if cur == 'PPC':
+                            self.User.Details.Funds[cur].Balance=float(texthtml\
+                            .split("PPC</tla><balavail>")[1].split("</baltotal><btctotal>")[0].split("<")[0])
+                        elif cur == 'BTC':
+                            self.User.Details.Funds[cur].Balance=float(texthtml\
+                            .split("PPC</tla><balavail>")[1].split("</baltotal><btctotal>")[0].split("<")[0])
+                        self.User.Details.Funds[cur].DepositAddress=''
+                        self.User.Details.Funds[cur].MinimumDeposit=0.0
+                        self.User.Details.Funds[cur].WithdrawFee=0.0
+                        self.User.Details.Funds[cur].DepositConfirmations=0.0
+                        self.User.Details.Funds[cur].Incoming=0.0
                     self.Return=self.User.Details
                     return MCXNOW_ERROR['Ok']
                 else:

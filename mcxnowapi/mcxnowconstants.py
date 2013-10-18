@@ -36,9 +36,9 @@ MCXNOW_DOMAIN="https://mcxnow.com"
 MCXNOW_ALLCURRENCY=McxNowCurrency().GetCodeAll()
 MCXNOW_TRADEDCURRENCY=McxNowCurrency().GetCodeAllTraded()
 
-MCXNOW_ACTION={'login':'/index.html?login', 
+MCXNOW_ACTION={'login':'/login.html', 
                         'logout':'/action?logout', 
-                        'useraccount':'/user.html', 
+                        'useraccount':'/account.html', 
                         'trade':'/action?trade', 
                         'exchange':'/exchange/', 
                         'info':'/info?', 

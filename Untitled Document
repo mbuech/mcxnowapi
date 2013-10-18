@@ -1,0 +1,3 @@
+x = open("hello.txt", "r").read()
+print x.split("BTC</tla><balavail>")[1].split("BTC</tla><balavail>")[0]
+	

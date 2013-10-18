@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>mcxNOW - My Account</title>
+<link rel="shortcut icon" type="image/png" href="/static/favicon.png" />
+<link href="/static/theme0.css" rel="stylesheet" type="text/css">
+<meta name="description" content="mcxNOW - Exchange Bitcoin, Litecoin, Primecoin, Mincoin and other digital currencies. Earn interest on all deposits and get free Bitcoins and crypto coins!">
+<script type='text/javascript'>
+var graphcolors_exchange = [ '#8080FF','#C08080','#000000','#910000','#1aadce','#492970','#f28f43','#77a1e5','#c42525','#a6c96a' ]
+var graphcolors_user = [ '#00F','#00F','#00F','#910000','#FF0','#FF0','#f28f43','#FF0','#c42525','#a6c96a' ]
+</script>
+
+<script src="/static/combined.js"  type="text/javascript"></script>
+</head>
+<body>
+<div id='side1' style='display:none;'><div class='slinks'></div><a class='sidelink' title='Want your ad here?' href='http://www.mincoinads.com/'>Crypto Community Ads</a></div>
+<div id='side2' style='display:none;'><div class='slinks'></div><a class='sidelink' title='Want your ad here?' href='http://www.mincoinads.com/'>Crypto Community Ads</a></div>
+<div id="page">
+    
+    <div id='header'>
+        <div id='mainmenu'><a href='/'>Home</a><a href='/features.html'>Features</a><a href='/privacy.html'>Privacy / Terms</a><a href='/api.html'>API</a><a href='/contact.html'>Contact</a><a href='/account.html'>My Account</a></div>
+        <div id='logo'><a title='mcxNOW' href='/'></a></div>
+        <div id='maininfo'>
+            <p id='numusers'>978 people online</p>
+            <p>11685 accounts</p>
+        </div>
+        <div id='extrainfo'><div id='exchangename'>Security Tip: Disable Java plugin in browser</div></div>
+    </div>
+    <div id="coinmenu"><a title='Litecoin Exchange' href='/exchange/LTC'><p>Litecoin</p><b>0.01309999</b></a><a title='PrimeCoin Exchange' href='/exchange/XPM'><p>PrimeCoin</p><b>0.00522</b></a><a title='PeerCoin Exchange' href='/exchange/PPC'><p>PeerCoin</p><b>0.00206902</b></a><a title='Feathercoin Exchange' href='/exchange/FTC'><p>Feathercoin</p><b>0.0005703</b></a><a title='MinCoin Exchange' href='/exchange/MNC'><p>MinCoin</p><b>0.00185</b></a><a title='SolidCoin Exchange' href='/exchange/SC'><p>SolidCoin</p><b>0.00319</b></a><a title='Devcoin Exchange' href='/exchange/DVC'><p>Devcoin</p><b>0.00000032</b></a><a title='WorldCoin Exchange' href='/exchange/WDC'><p>WorldCoin</p><b>0.0001</b></a><a title='CopperLark Exchange' href='/exchange/CL'><p>CopperLark</p><b>0.000389</b></a><a title='mcxFEE Exchange' class='last' href='/exchange/MCX'><p>mcxFEE</p><b>0.888</b></a></div>
+    <div id="pagecontent">
+        <div id="main">
+            <h2 style='text-align:center;margin:5px 0 0px 0;padding:0px;'>upennarc mcxNOW Account <a style='float:right;margin-right:10px;' href='/action?logout&sk=MM8Z4woZNzFT'>Logout</a></h2>
+<div id='account_bal'>
+    <div id='account_bal_top'></div>
+    <div id='account_bal_bot1'>
+        <div id="userinfo">
+            <div class="infocenter">
+                <h3 class='usertitle'>Account Overview</h3>
+                <div class='accountrowheader'><div class='c1'>Currency</div><div class='c2'>Available Balance</div><div class='c3'>Total Balance</div><div class='c4'>Value in BTC</div></div>
+                <div id='user_accountoverview'></div>
+                <div class='accountrowheader'><div class='c1'>Total</div><div class='c2'></div><div class='c3'></div><div class='c4'><span id='totalbtcworth'></span></div></div>
+            </div>
+            <div class="infocenter">
+                <h3 class='usertitle'>Settings</h3>
+
+                <form id='change' name='change' action='/account.html?change' method='post'>
+                    <div id='user_error' style='display:none;'></div>
+                    <div class='row'><b>Account Type</b>Normal Account</div>
+                    <div class='row'><b>Color Theme</b>
+                        <select id='changetheme' name='changetheme' autocomplete='off'>
+                            <option value='0'>White</option>
+                            <option value='1'>Dark</option>
+                        </select>
+                    </div>
+                    <div class='row'><b>Sounds</b>
+                        <select id='changesound' name='changesound' autocomplete='off'>
+                            <option value='0'>Disabled</option>
+                            <option value='1'>Enabled</option>
+                        </select>
+                    </div>
+                    <div class='row'><b title='mcxNOW supports the crypto community and helps showcase other sites with community ads'>Show Community Ads</b>
+                        <select id='changeads' name='changeads' autocomplete='off'>
+                            <option value='0'>Disabled</option>
+                            <option value='1'>Enabled</option>
+                        </select>
+                    </div>
+                    <div class='row'><b>Show on richest list</b>
+                        <select id='changerich' name='changerich' autocomplete='off'>
+                            <option>none</option><option>all</option><option>LTC</option><option>XPM</option><option>PPC</option><option>FTC</option><option>MNC</option><option>SC</option><option>DVC</option><option>WDC</option><option>CL</option><option>MCX</option>
+                        </select>
+                    </div>
+                    <div class='row'><b title='Determines how long you are idle before mcxNOW automatically logs you out'>Logout on idle</b>
+                        <select id='changeidlelogout' name='changeidlelogout' autocomplete='off'>
+                            <option value='0'>Never</option>
+                            <option value='15'>15 minutes</option>
+                            <option value='30'>30 minutes</option>
+                            <option value='60'>60 minutes</option>
+                        </select>
+                    </div>
+                    <div class='row'><b title='If your internet address (IP) changes mcxNOW can automatically log you out'>Logout on IP change</b>
+                        <select id='changeiplogout' name='changeiplogout' autocomplete='off'>
+                            <option value='0'>Disabled</option>
+                            <option value='1'>Enabled</option>
+                        </select>
+                    </div>
+                    <div class='row'><b>New Password</b><input type='password' name='changepass1' placeholder='12 character minimum' style='width:190px;'><input type='password' name='changepass2' placeholder='Confirm new password' style='width:190px;'></div>
+                    <div class='row2'><b>Confirm current password</b><input type='password' name='oldpass' style='width:190px;'><a onclick='javascript:document.change.submit()' class='button' href='javascript:void(0)'>Update Account</a><input type='submit' class='submit' style='display:none;'></div>
+                </form>
+            </div>
+
+            <div class="infocenter">
+                <h3 class='usertitle'>Google Authenticator (two factor authorization)</h3>
+                <div id='getqrcode' style='display:none;text-align:center;padding:10px;'><a style='font-size:20px;' href='/account.html?googleauth'>Enable Google Authenticator on your account</a></div>
+                <div id='haveqrcode' style='display:none;text-align:center;padding:10px;'>Google Authenticator enabled on account</div>
+                <div id='qrcodecontainer' style='display:none;' >
+                    <p>1. Download and set up <a href='http://support.google.com/accounts/bin/answer.py?answer=1066447'>Google Authenticator</a> for your Android, iPhone or BlackBerry device and proceed to step 2.  If you are already using Google Authenticator, open the settings menu and choose an option to manually add an account.</p>
+                    <p>2. Scan the QRcode below or manually enter the URI string into the Google Authenticator app to pair your phone to your mcxNOW account. If the QR code scanning is not supported by your device, select “Enter provided key” in the manual account setup and fill in the account name as desired (e.g. “mcxNOW.com exchange”) . The key to enter is ONLY the characters in “secret=” part of the URI string below.  (?secret=xxxxxxxxxxxxx&issuer=mcxNOW -- enter only the xxxxxxxxxxxxx key)</p>
+                    <div style='margin:0px auto;padding:20px;background:#FFF;width:400px;height:400px;'>
+                        <div id="qrcode" style='width:400px;height:400px;'></div>
+                    </div>
+                    <div id='secreturi' style='text-align:center;font-size:12px;'></div>
+                    <p>3. Lock your device to your mcxNOW account by entering a 6 number code from the app.</p>
+                    <p>
+                    <form id='gauth' name='gauth' action='/account.html?gauthconfirm' method='post'>
+                    <div style='margin:0px auto;width:280px;height:37px;'>
+                        <input name='confirmcode' placeholder='Enter 6 digit code' type='text' style='margin:0 10px 0 0;display:block;padding:0px 5px; width:120px;height:35px;float:left;'>
+                        <a onclick='javascript:document.gauth.submit()' style='display:block;text-align:center;width:120px;padding:0px;height:35px;line-height:35px;' class='button' href='javascript:void(0)'>Lock Device</a>
+                    </div>
+                    <input type='submit' class='submit' style='display:none;'>
+                    <div style='text-align:center;'>
+
+                    </div>
+                    </form>
+
+                    </p>
+                    <p>4. If after attempting Step 3, you still see these instructions, your authorization was not completed and this account is not linked to your Google Auth device. Please try again</p>
+                </div>
+
+            </div>
+        </div>
+        <div class='userright'>
+                <div class="infocenter">
+                    <h3 class='usertitle'>Add a currency to your account</h3>
+                    <p style='text-align:center;'>
+                        <select id='newcurrency' onchange='onAddNewCur(this)' style='font-family:Courier;font-size:18px;' name='newcurrency' placeholder='Select a currency' autocomplete='off'>
+                        </select>
+                    </p>
+                </div>
+                <div class="infocenter">
+                    <h3 class='usertitle'>Pro Trading Upgrade</h3>
+                    <p style='text-align:center;'>
+                    <a style='margin:5px 0;' href='javascript:void(0)' onmousedown='upgradeaccount()' title='Upgraded accounts have longer visible orderbooks and faster updates. Because they consume more resources they require a fee.'>Buy Upgrade [+14 days] [0.05BTC]</a>
+                    <br />Learn more about what a pro trading account offers you by clicking <a href='/features.html#protrading'>here</a>
+                    </p>
+                </div>
+                <div class="infocenter">
+                    <h3 class='usertitle'>Security Center</h3>
+                    <div id='securitylogs'></div>
+                </div>
+
+            <div class="infocenter">
+                <h3 class='usertitle'>Two Factor Authentication</h3>
+                <p>Google Authenticator can be used on mcxNOW to provide extra security for logging in and withdrawing funds.<br /><br />Google Authenticator is a completely offline method of authenticating, it does not use Google Servers or google accounts, it uses TIME and a secret key only.<br /><br />It is recommended you enable two factor authentication so that if your password is compromised or machine is hacked it is very unlikely you will lose funds.</p>
+            </div>
+        </div>
+
+    </div>
+    <div id='account_bal_bot2' style='display:none;padding:10px;'>
+        <div style='overflow:auto;'>
+            <div id='account_cur_overview'>
+                <div class='account_overview_item'><b title='Amount of balance you can currently spend'>Available Balance</b><p id='account_cur_bal'></p></div>
+                <div class='account_overview_item' style='width:230px;'><b title='This balance includes available balance and all your orders'>Total Balance</b><p id='account_cur_baltotal'></p></div>
+                <div class='account_overview_item' style='width:230px;'><b title='Number of orders you have for this currency'>Buy Orders</b><p id='account_cur_buyorders'></p></div>
+                <div class='account_overview_item' style='margin-right:0;'><b title='All deposits gain daily interest by using 25% of the exchange fees.'>Sell orders</b><p id='account_cur_sellorders'></p></div>
+            </div>
+
+            <div id='account_cur_top1'>
+                <div class='account_bubble'>
+                    <h3 id='deposit_name'>Deposit</h3>
+                    <p id='deposit_min'></p>
+                    <b id='deposit_addr'></b>
+                    <b id='deposit_interest'></b>
+                </div>
+            </div>
+            <div id='account_cur_top2'>
+                <div class='account_bubble'>
+                    <form id='withdraw' name='withdraw' action='/withdraw.html' method='post'>
+                    <input style='display:none;' id='withdrawtla' name='cur'>
+                        <h3 id='withdraw_name'>Withdraw</h3>
+                        <p id='withdraw_fee'></p>
+                        <b><input id='withdrawaddress' name='address' style='width:451px;' placeholder='Enter address or nickname'></b>
+                        <b>
+                            <input id='withdrawamount' name='amount' style='width:225px;' placeholder='Enter amount'>
+                            <a href='javascript:void(0)' onclick='withdrawclick()'>Withdraw</a>
+                        </b>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div id='balchart'></div>
+        <div class='balstatement'>
+            <h3>Incoming transactions</h3>
+            <div class='balrowheader'>
+                <div class='c1'>Confirms</div>
+                <div class='c5'>Transaction ID</div>
+                <div class='c6'>Amount</div>
+            </div>
+            <div id='usercurutx'></div>
+        </div>
+        <div class='balstatement'>
+            <h3>Balance History</h3>
+            <div class='balrowheader'>
+                <div class='c1'>Date</div>
+                <div class='c2'>Description</div>
+                <div class='c3'>Amount</div>
+                <div class='c4'>Balance</div>
+            </div>
+            <div id='usercurlogs'></div>
+        </div>
+        <p style='margin-top:10px;text-align:center;font-size:12px;'>To keep mcxNOW fast only a certain number of logs are kept in memory for each user. You can increase your limit by upgrading to a pro trader account.</p>
+    </div>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+
+function splitBalance(bal)
+{
+    if(bal.indexOf(".")!=-1)
+    {
+        var b = bal.split(".");
+        b[1] = "."+b[1];
+        return b;
+    }
+    return new Array(bal,"");
+}
+
+var user_cur = {
+    name: [],
+    tla: [],
+    addr: [],
+    bal: [],
+    baltotal: [],
+    fee: [],
+    buyorders: [],
+    sellorders: [],
+    logs: [],
+    utx: []
+    }
+
+var user_data=null;
+var user_securitylogs = [];
+var user_seltab=-1;
+var cur_fees=[{name:'Bitcoin',tla:'BTC',confirms:3,fee:'0.001',min:'0.01',interest: '8.43201385'},{name:'Litecoin',tla:'LTC',confirms:6,fee:'0.02',min:'0.1',interest: '0.4884428'},{name:'PrimeCoin',tla:'XPM',confirms:10,fee:'0.1',min:'0.1',interest: '3.51641682'},{name:'PeerCoin',tla:'PPC',confirms:4,fee:'0.1',min:'0.1',interest: '0.398016'},{name:'Feathercoin',tla:'FTC',confirms:10,fee:'0.1',min:'0.1',interest: '0.41468159'},{name:'MinCoin',tla:'MNC',confirms:10,fee:'0.1',min:'0.1',interest: '2.53606921'},{name:'SolidCoin',tla:'SC',confirms:2,fee:'0.4',min:'0.1',interest: '0.0'},{name:'Devcoin',tla:'DVC',confirms:3,fee:'50.0',min:'100.0',interest: '0.41014391'},{name:'WorldCoin',tla:'WDC',confirms:10,fee:'0.4',min:'0.1',interest: '3.16790894'},{name:'CopperLark',tla:'CL',confirms:6,fee:'0.4',min:'0.1',interest: '0.54586493'},{name:'mcxFEE',tla:'MCX',confirms:0,fee:'0',min:'0',interest: '0'}];
+var startData='<?xml version="1.0" encoding="UTF-8" ?><doc><slog><t>1382071617</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071546</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071509</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071497</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071421</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071303</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071271</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071267</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071259</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071239</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071183</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071172</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071153</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071143</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071095</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071083</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071073</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071068</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071061</t><d>Log in by 68.80.81.223</d></slog><slog><t>1382071055</t><d>Log in by 68.80.81.223</d></slog><theme>0</theme><sounds>1</sounds><iplogout>1</iplogout><showads>1</showads><idlelogout>15</idlelogout><richlist>none</richlist><gauthstatus>0</gauthstatus><cur><name>Bitcoin</name><tla>BTC</tla><balavail>1.11329546</balavail><baltotal>1.11329546</baltotal><btctotal>1.11329546</btctotal><addr>1F2cNeu1gJAGWR9Sf9qFNbUTdRyNtb6AtV</addr><log><t>1382054400</t><d>Interest Payment on deposit of 1.1132511</d><a>0.00004436</a><b>1.11329546</b></log><log><t>1382032800</t><d>Interest Payment on deposit of 1.11315456</d><a>0.00009654</a><b>1.1132511</b></log><log><t>1382011208</t><d>Interest Payment on deposit of 1.1130779</d><a>0.00007666</a><b>1.11315456</b></log><log><t>1381989600</t><d>Interest Payment on deposit of 1.113</d><a>0.0000779</a><b>1.1130779</b></log><log><t>1381987695</t><d>Deposit - TXID: ed5305e11bfa02a9c9d8d40d8124968fc255897be03028de9c4e382f0799074e</d><a>1.113</a><b>1.113</b></log><log><t>1381964552</t><d>Exchanged for 11.041116PPC at 0.00222999BTC each</d><a>-0.02467092</a><b>0.0</b></log><log><t>1381964541</t><d>Exchanged for 19.96PPC at 0.00222999BTC each</d><a>-0.0445998</a><b>0.02467092</b></log><log><t>1381963026</t><d>Exchanged for 299.112234PPC at 0.00222499BTC each</d><a>-0.66685544</a><b>0.06927072</b></log><log><t>1381962630</t><d>Exchanged for 1.945562PPC at 0.00215BTC each</d><a>-0.00419134</a><b>0.73612616</b></log><log><t>1381962630</t><d>Exchanged for 19.96PPC at 0.00215BTC each</d><a>-0.043</a><b>0.7403175</b></log><log><t>1381962630</t><d>Exchanged for 99.8PPC at 0.002148BTC each</d><a>-0.2148</a><b>0.7833175</b></log><log><t>1381946435</t><d>Interest Payment on deposit of 0.9980623</d><a>0.0000552</a><b>0.9981175</b></log><log><t>1381924843</t><d>Interest Payment on deposit of 0.998</d><a>0.0000623</a><b>0.9980623</b></log><log><t>1381915339</t><d>Deposit - TXID: d37801cf70db4249f8fea8a7adf342ef942c79ecbb03bd6172b79af9c0d37990</d><a>0.998</a><b>0.998</b></log><log><t>1381910075</t><d>Account Created</d><a>0.0</a><b>0.0</b></log></cur><cur><name>PeerCoin</name><tla>PPC</tla><balavail>951.749068</balavail><baltotal>951.749068</baltotal><btctotal>1.96918786</btctotal><addr>PUgyYw5MTngj9M6VHrDTv3ZKT6LfQn77xe</addr><sellorders>0</sellorders><buyorders>0</buyorders><log><t>1382054400</t><d>Interest Payment on deposit of 951.747882</d><a>0.001186</a><b>951.749068</b></log><log><t>1382032800</t><d>Interest Payment on deposit of 951.743139</d><a>0.004743</a><b>951.747882</b></log><log><t>1382011208</t><d>Interest Payment on deposit of 951.741802</d><a>0.001337</a><b>951.743139</b></log><log><t>1381989600</t><d>Interest Payment on deposit of 951.739089</d><a>0.002713</a><b>951.741802</b></log><log><t>1381968033</t><d>Interest Payment on deposit of 951.735055</d><a>0.004034</a><b>951.739089</b></log><log><t>1381964552</t><d>Exchanged for 0.02467092BTC at 0.00222999BTC each</d><a>11.041116</a><b>951.735055</b></log><log><t>1381964541</t><d>Exchanged for 0.0445998BTC at 0.00222999BTC each</d><a>19.96</a><b>940.693939</b></log><log><t>1381963026</t><d>Exchanged for 0.66685544BTC at 0.00222499BTC each</d><a>299.112234</a><b>920.733939</b></log><log><t>1381962630</t><d>Exchanged for 0.00419134BTC at 0.00215BTC each</d><a>1.945562</a><b>621.621705</b></log><log><t>1381962630</t><d>Exchanged for 0.043BTC at 0.00215BTC each</d><a>19.96</a><b>619.676143</b></log><log><t>1381962630</t><d>Exchanged for 0.2148BTC at 0.002148BTC each</d><a>99.8</a><b>599.716143</b></log><log><t>1381946435</t><d>Interest Payment on deposit of 499.904335</d><a>0.011808</a><b>499.916143</b></log><log><t>1381924843</t><d>Interest Payment on deposit of 499.9</d><a>0.004335</a><b>499.904335</b></log><log><t>1381915423</t><d>Deposit - TXID: b3b95563e8429246566d1938e41c89e5618890a65beff4a158a171d1cedeca3d</d><a>499.9</a><b>499.9</b></log><log><t>1381913135</t><d>Account Created</d><a>0.0</a><b>0.0</b></log></cur><totalbtcworth>3.08248332</totalbtcworth></doc>';
+var generatedQR=0;
+var time_userupdate=new Date();
+
+function onAddNewCur(event)
+{
+    var val=event.options[event.selectedIndex].value;
+    if(val.length<=0) return;
+
+    for(var i=0;i<user_cur.tla.length;i++)
+    {
+        if(user_cur.tla[i]==val)
+        {
+            alert("You already have "+val);
+            return;
+        }
+    }
+
+
+
+    $.ajax({
+        type: "GET", cache: false, url: "/action?addcurrency&amp;cur="+val+"&amp;sk=MM8Z4woZNzFT", dataType: "xml", success: function (data)
+        {
+            event.selectedIndex=0;
+            time_userupdate=0;
+            alert("Added currency "+val);
+            window.location.href = '/account.html';
+        }
+        });
+}
+function withdrawclick()
+{
+    $("#withdrawtla").val(user_cur.tla[user_seltab]);
+    javascript:document.withdraw.submit();
+}
+function upgradeaccount()
+{
+    if (confirm('Are you sure you want to buy 14 days upgraded access at a cost of 0.05BTC?'))
+    {
+        window.location = '/account.html?upgrade&amp;sk=MM8Z4woZNzFT'
+    }
+}
+
+function topclick(e)
+{
+    if(e==0)
+    {
+        $("#account_bal_bot1").show();
+        $("#account_bal_bot2").hide();
+    }
+    else
+    {
+        $("#account_bal_bot1").hide();
+        $("#account_bal_bot2").show();
+    }
+    for(x=0;x<$('#account_bal_top').children().size();x++)
+    {
+        if(x==e)
+        {
+            $("#account_bal_top").children("a").eq(x).addClass('sel');
+            setCurData($("#account_bal_top").children("a").eq(x).text());
+        }
+        else
+        {
+            $("#account_bal_top").children("a").eq(x).removeClass('sel');
+        }
+    }
+
+}
+
+function setCurData(e)
+{
+    var balseries = {
+        id: 'series',
+        name: 'JSON Data',
+        data: []
+    }
+    var x = $.inArray(e, user_cur.tla);
+    if(x<0)
+    {
+        user_seltab=-1
+        return;
+    }
+    user_seltab=x;
+
+    var nCurIndex=0;
+    for (var i = 0; i <cur_fees.length; i++)
+    {
+        if(cur_fees[i].tla==user_cur.tla[x])
+        {
+            nCurIndex=i;
+            break;
+        }
+    }
+    if(user_cur.tla[x]=="MCX")
+    {
+        $('#deposit_addr').html("Use your mcxNOW account name to receive");
+        $('#deposit_interest').html("Est. annual interest rate: 0%");
+    }
+    else
+    {
+        if(user_cur.addr[x].length>0)   $('#deposit_addr').html(user_cur.addr[x]);
+        else                            $('#deposit_addr').html("<a href='/action?getdepositaddr&amp;cur="+user_cur.tla[x]+"&amp;sk=MM8Z4woZNzFT'>Click here to get deposit address</a>");
+    }
+    $('#account_cur_bal').html(user_cur.bal[x]);
+    $('#account_cur_baltotal').html(user_cur.baltotal[x]);
+    $('#account_cur_buyorders').html(user_cur.buyorders[x]);
+    $('#account_cur_sellorders').html(user_cur.sellorders[x]);
+
+
+    $('#deposit_name').html("Deposit "+user_cur.name[x]);
+    $('#withdraw_name').html("Withdraw "+user_cur.name[x]);
+
+
+    if(cur_fees[nCurIndex].fee=="0")    $('#withdraw_fee').html("");
+    else                                $('#withdraw_fee').html("Withdrawal Fee: "+cur_fees[i].fee+user_cur.tla[x]);
+    if(cur_fees[nCurIndex].min=="0")    $('#deposit_min').html("");
+    else                                $('#deposit_min').html("Minimum Deposit: "+cur_fees[i].min+user_cur.tla[x]);
+
+    if(user_cur.tla[x]!="MCX")
+    {
+        $('#deposit_interest').html("Est. annual interest rate: "+cur_fees[i].interest+"%");
+    }
+
+
+
+    var str="";
+    for (n = 0; n < user_cur.logs[x].length; ++n)
+    {
+        var log=user_cur.logs[x][n];
+        var otime = new Date(0);
+        otime.setUTCSeconds(parseInt(log.time));
+        var bal=splitBalance(log.balance);
+        var amount=splitBalance(log.amount);
+        str+="<div class='balrow'><div class='c1'>"+otime.toString()+"</div><div class='c2'>"+log.desc+"</div><div class='c3'><span class='balrowleft'>"+amount[0]+"</span><span class='balrowright'>"+amount[1]+"</span></div><div class='c4'><span class='balrowleft'>"+bal[0]+"</span><span class='balrowright'>"+bal[1]+"</span></div></div>";
+
+        balseries.data.unshift([ (otime.getTime()),parseFloat(log.balance)] );
+    }
+    $('#usercurlogs').html(str);
+    if( user_cur.logs[x].length>0)
+    {
+        var otime = new Date();
+        balseries.data.push([ (otime.getTime()),parseFloat( user_cur.logs[x][0].balance)] );
+    }
+    doChart(balseries,user_cur.name[x]);
+
+    str="";
+    for (n = 0; n < user_cur.utx[x].length; ++n)
+    {
+        var log=user_cur.utx[x][n];
+        var amount=splitBalance(log.amount);
+        str+="<div class='balrow'><div class='c1' style='text-align:center'>"+log.time+" / "+cur_fees[nCurIndex].confirms+"</div><div class='c5'>"+log.desc+"</div><div class='c6'><span class='balrowleft'>"+amount[0]+"</span><span class='balrowright'>"+amount[1]+"</span></div></div>";
+    }
+    $('#usercurutx').html(str);
+}
+
+function setSelectedIndexIfDiff(item, val)
+{
+    if(item.prop("selectedIndex") != val) item.prop("selectedIndex",val);
+}
+function setSelectedIfDiff(item, val)
+{
+    if(item.val() != val.text()) item.val(val.text());
+}
+function onUserData(data)
+{
+    user_data=data;
+    user_securitylogs.length = 0;
+    $(user_data).find("slog").each(function ()
+    {
+        user_securitylogs.push( { time: parseInt($(this).find("t").text()),desc: $(this).find("d").text() } );
+    });
+
+    setSelectedIfDiff($("#changerich"),$(user_data).find("richlist"));
+    setSelectedIndexIfDiff($("#changetheme"),parseInt($(user_data).find("theme").text()));
+    setSelectedIndexIfDiff($("#changesound"),parseInt($(user_data).find("sounds").text()));
+    setSelectedIndexIfDiff($("#changeads"),parseInt($(user_data).find("showads").text()));
+
+    setSelectedIndexIfDiff($("#changeiplogout"),parseInt($(user_data).find("iplogout").text()));
+    switch(parseInt($(user_data).find("idlelogout").text()))
+    {
+        case 15: setSelectedIndexIfDiff($("#changeidlelogout"),1);break;
+        case 30: setSelectedIndexIfDiff($("#changeidlelogout"),2);break;
+        case 60: setSelectedIndexIfDiff($("#changeidlelogout"),3);break;
+        default: setSelectedIndexIfDiff($("#changeidlelogout"),0);break;
+    }
+
+
+    switch(parseInt($(user_data).find("gauthstatus").text()))
+    {
+        default:
+        case 0: $('#getqrcode').show();break;
+        case 1:
+            var secreturi="otpauth://totp/mcxNOW:upennarc?secret="+$(user_data).find("gauthsecret").text()+"&issuer=mcxNOW";
+            if(generatedQR==0)
+            {
+                var qrcode = new QRCode("qrcode", {
+                    text: secreturi,
+                    width: 400,
+                    height: 400,
+                    colorDark : "#000000",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+
+                generatedQR=1;
+            }
+            $('#secreturi').html(secreturi);
+            $('#qrcodecontainer').show();
+            break;
+        case 2: $('#haveqrcode').show();break;
+    }
+
+    var str="";
+    var monthNames = new Array("Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep","Oct", "Nov", "Dec");
+    for (n = 0; n < user_securitylogs.length; ++n)
+    {
+        var otime = new Date(0);
+        otime.setUTCSeconds(user_securitylogs[n].time);
+        var mins =otime.getMinutes();
+        if(mins<10) mins = "0"+mins;
+        var timestr = otime.getDate()+"-"+monthNames[otime.getMonth()]+" "+otime.getHours()+":"+mins;
+        str+="<div class='securityrow'><b>"+timestr+"</b>"+user_securitylogs[n].desc+"</div>";
+
+    }
+    $('#securitylogs').html(str);
+
+    var b=splitBalance($(user_data).find("totalbtcworth").text());
+    $('#totalbtcworth').html("<span class='accountrowleft'>"+b[0]+"</span><span class='accountrowright'>"+b[1]+"</span>");
+
+    $(user_data).find("cur").each(function ()
+    {
+        var item = $(this);
+        var found=0;
+        var name= item.find("name").text();
+        var tla= item.find("tla").text();
+        var addr=item.find("addr").text();
+        var bal=item.find("balavail").text();
+        var baltotal=item.find("baltotal").text();
+        var btctotal=item.find("btctotal").text();
+        var buyorders=item.find("buyorders").text();
+        var sellorders=item.find("sellorders").text();
+        var found = $.inArray(name, user_cur.name) > -1;
+
+        if(found==false)
+        {
+            $("#account_bal_top").append("<a href='javascript:void(0)' onmousedown='topclick("+$('#account_bal_top').children().size()+")'>"+tla+"</a>");
+
+            var b=splitBalance(bal);
+            var tb=splitBalance(baltotal);
+            var tbtc=splitBalance(btctotal);
+            $("#user_accountoverview").append("<div class='accountrow'><div class='c1'>"+name+"</div><div class='c2'><span class='balrowleft'>"+b[0]+"</span><span class='balrowright'>"+b[1]+"</span></div><div class='c3'><span class='balrowleft'>"+tb[0]+"</span><span class='balrowright'>"+tb[1]+"</span></div><div class='c4'><span class='balrowleft'>"+tbtc[0]+"</span><span class='balrowright'>"+tbtc[1]+"</span></div></div>");
+
+            user_cur.name.push(name);
+            user_cur.tla.push(tla);
+            user_cur.addr.push(addr);
+            user_cur.bal.push(bal);
+            user_cur.baltotal.push(baltotal);
+            user_cur.buyorders.push(buyorders);
+            user_cur.sellorders.push(sellorders);
+            user_cur.fee.push(item.find("fee").text());
+
+            var logs = [];
+            item.find("log").each(function ()
+            {
+                var time1 = $(this).find("t").text();
+                var desc1 = $(this).find("d").text();
+                var amount1 = $(this).find("a").text();
+                var balance1 = $(this).find("b").text();
+                logs.push( { time: time1, desc: desc1, amount: amount1, balance:balance1} );
+            });
+            user_cur.logs.push(logs);
+            var utx = [];
+            item.find("utx").each(function ()
+            {
+                utx.push( { time: $(this).find("t").text(), desc: $(this).find("d").text(), amount: $(this).find("a").text()} );
+            });
+            user_cur.utx.push(utx);
+
+        }
+
+    });
+}
+
+function updateuserinfo()
+{
+    $.ajax({
+        type: "GET", cache: false, url: "/userinfo", dataType: "xml", success: function (data)
+        {
+            onUserData(data);
+        }
+        });
+}
+
+
+function doChart(e, tla)
+{
+    $('#balchart').highcharts({
+
+    colors: graphcolors_user
+            ,
+    chart: {
+        type: 'line',
+        backgroundColor: jQuery('#balchart').css("background-color"),
+        borderRadius: '0',
+        margin: [40, 85, 40, 85]
+    },
+    title: {
+        text: 'Your '+tla+' balance', style: {    color: jQuery('#balchart').css("color") }
+    },
+    tooltip: {
+                formatter: function() {
+                        return Highcharts.dateFormat('%A %e %b %Y - %H:%M:%S', this.x)+'<br /><br /><b style="font-size:16px;">'+Highcharts.numberFormat(this.y,2,'.','')+' '+tla+'</b>';
+                }
+            },
+    xAxis: {
+            type: 'datetime',
+            labels: { style: {    color: jQuery('#balchart').css("color") } },
+            title: {    text: 'Date', style: {    color:jQuery('#balchart').css("color") }},
+            }
+    ,yAxis:[
+              {
+                labels: { style: {    color: jQuery('#balchart').css("color") } },
+                title: {
+                    text: tla+' Balance',
+                    style: {    color: jQuery('#balchart').css("color") }
+                },
+                min: 0
+            }, {
+                labels: { style: {    color: jQuery('#balchart').css("color") } },
+                linkedTo:0,
+                title: {
+                    text: tla+' Balance',
+                    style: {    color: jQuery('#balchart').css("color") }
+                },
+                opposite:true
+            }]
+    ,
+    series: [{
+        showInLegend: false,
+        name: 'Your '+tla+' balance',
+        data: e.data
+    }
+    ]
+});
+}
+Highcharts.setOptions({
+    global: {
+        useUTC: false
+    }
+});
+
+function maintimer()
+{
+    var time_cur = new Date();
+    if(time_cur-time_userupdate >= 10000)
+    {
+        updateuserinfo();
+        time_userupdate=time_cur;
+    }
+
+}
+
+
+var str="<a class='sel' href='javascript:void(0)' onmousedown='topclick(0)'>Overview</a>";
+$("#account_bal_top").html(str);
+
+
+cur_fees.sort(function(a,b){
+  if (a.tla < b.tla) return -1;
+  if (a.tla > b.tla) return 1;
+  return 0;
+});
+
+
+var str="<option value=''>Select a currency</option>";
+for(var i=0;i<cur_fees.length;i++)
+{
+    var tla=cur_fees[i].tla;
+    if(tla.length==2) tla=tla+"&nbsp;";
+    str+="<option value='"+cur_fees[i].tla+"'>"+tla+" - "+cur_fees[i].name+"</option>";
+}
+$("#newcurrency").html(str);
+
+
+onUserData(startData);
+//setInterval(function(){maintimer()},100);
+
+
+var url=window.location.search;
+var pos=url.indexOf("?tab=");
+if(pos!=-1)
+{
+    var tab=url.substring(pos+5);
+    for(var i=0;i<user_cur.tla.length;i++)
+    {
+        if(user_cur.tla[i]==tab)
+        {
+            topclick(i+1);
+            break;
+        }
+    }
+}
+pos=url.indexOf("?error=");
+if(pos!=-1)
+{
+    var error=url.substring(pos+7);
+    if(error=="1") $('#user_error').html("You did not confirm changes with your existing password.");
+    if(error=="2") $('#user_error').html("New password didn't match, contained invalid characters or wasn't within the specified range of 12 to 60 characters in length.");
+    if(error=="3") $('#user_error').html("Not enough Bitcoins to purchase upgrade.");
+    if(error=="4") $('#user_error').html("The Google Authenticator 6 digit code you entered was incorrect. Make sure the time or your device is accurate.");
+    $('#user_error').show();
+}
+
+</script>
+
+        </div>
+    </div>
+    <div id="footer">
+        <b>Powered by C++ / 1 million user capacity / 3 Tier network security / Protected by Experience (tm)</b>
+        <div id="pagefooter"><small style='float:left;padding-left:20px;'>Copyright © 2013 mcxNOW. All rights reserved by mcxNOW</small><small style='float:right;padding-right:20px;'>Page created in 0.57ms</small></div>
+    </div>
+</div>
+<script type="text/javascript">
+    var url = window.location;
+    $('#coinmenu a').filter(function() { return this.href == url;}).addClass("sel");
+    $('#mainmenu a').filter(function() { return this.href == url;}).addClass("sel");
+</script>
+</body>
+</html>
